@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: disappointed-guppy-dotnet-basic-gitops
+  description: This is GitOps manifest for disappointed-guppy-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: disappointed-guppy-dotnet-basic
+    janus-idp.io/tekton: disappointed-guppy-dotnet-basic 
+    backstage.io/kubernetes-id: disappointed-guppy-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:disappointed-guppy-dotnet-basic
